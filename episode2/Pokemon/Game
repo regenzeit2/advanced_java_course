@@ -1,0 +1,9 @@
+package Pokemon;
+public class Game {
+    public static void main(String[] args) {
+        Pokemon first = new Pokemon();
+        Pokemon second= new Pokemon();
+        Fight myFight=new Fight();
+        myFight.Action(first, second);
+    }
+}

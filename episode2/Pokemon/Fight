@@ -1,0 +1,29 @@
+package Pokemon;
+
+import java.util.Scanner;
+
+public class Fight {
+    public void Action(Pokemon first, Pokemon second) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Fight begins!");
+        while(first.getHealth()>0 && second.getHealth()>0) {
+            System.out.println("First pokemon...");
+            first.exactCommand(in.next());
+            System.out.println("Second pokemon...");
+            second.exactCommand(in.next());
+
+            System.out.println("First: health = "+first.getHealth() + ", power = "+first.getPower());
+            System.out.println("Second: health = "+second.getHealth()+", power = "+second.getHealth());
+
+            if (first.getPower()<10) first.setPower(first.getPower()+3);
+            if (first.getHealth()<10) first.setHealth(first.getHealth()+5);
+            if (second.getPower()<10) second.setPower(second.getPower()+3);
+            if (second.getHealth()<10) second.setHealth(second.getHealth()+5);
+            }
+        if (first.getHealth()==0) System.out.println("First pokemon lose! Second win!");
+        if (second.getHealth()==0) System.out.println("Second pokemon lose! First win!");
+        else System.out.println("Ничья");
+        }
+    }
+
+
